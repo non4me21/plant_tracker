@@ -4,7 +4,7 @@ from .serializers import PlantSerializer
 from django.utils import timezone
 
 class PlantViewSet(viewsets.ModelViewSet):
-    queryset = Plant.objects.all()
+    queryset = Plant.objects.all().order_by('last_time_watered')
     serializer_class = PlantSerializer
     lookup_field = 'slug'
 
