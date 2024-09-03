@@ -1,5 +1,5 @@
 /plant_tracker_back/plants/migrations
 /plant_tracker_back/.venv
-/plant_tracker_back/media/plants
+/plant_tracker_back/media
 node_modules
-.env
+/plant_tracker_back/.env
