@@ -8,6 +8,7 @@ class Plant(models.Model):
     room = models.CharField(max_length=50, null=True, blank=True)
     last_time_watered = models.DateTimeField(null = True, blank=True)
     notes = models.TextField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to='plants_images')
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -19,4 +20,7 @@ class Plant(models.Model):
                 count += 1
             self.slug = slug
         super().save(*args, **kwargs)
+        
+    def __str__(self):
+        return self.name
 
