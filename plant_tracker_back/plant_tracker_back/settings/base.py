@@ -17,7 +17,7 @@ import os
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -27,18 +27,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gp@vql$(7i8ayh#e6n%bsl*$sh6ek^@psc6g@p+btcim*(7o#7'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-CORS_ORIGIN_ALLOW_ALL = DEBUG
-
-ALLOWED_HOSTS = [
-    'web',
-    'localhost'
-]
-
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # Application definition
 
@@ -84,21 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'plant_tracker_back.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {    
-   "default": {        
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",
-        "PORT": 5432,
-    }
-}
 
 
 # Password validation

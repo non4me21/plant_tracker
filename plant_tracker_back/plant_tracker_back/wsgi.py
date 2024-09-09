@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'plant_tracker_back.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'plant_tracker_back.settings.dev')
 
 application = get_wsgi_application()
