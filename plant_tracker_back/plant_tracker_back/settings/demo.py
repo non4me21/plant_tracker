@@ -1,5 +1,6 @@
 from .base import *
 import os
+import dj_database_url
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -14,12 +15,7 @@ ALLOWED_HOSTS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = { 
-    "default": {        
-  "ENGINE": "django.db.backends.postgresql",
-  "NAME": os.environ.get("DB_NAME"),
-  "USER": os.environ.get("DB_USER"),
-  "PASSWORD": os.environ.get("DB_PASSWORD"),
-  "HOST": os.environ.get("DB_HOST"),
-  "PORT": os.environ.get("DB_PORT"),
-}      
+     
 }
+
+DATABASES["default"] = dj_database_url.parse(os.environ.get('DB_URL'))
