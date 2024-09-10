@@ -2,7 +2,7 @@ version: '3.8'
 services:
   web:
     build: ./plant_tracker_back
-    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "python -u manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./plant_tracker_back/:/project/
     ports:
@@ -11,6 +11,8 @@ services:
       - db
     env_file:
       - plant_tracker_back/.env
+    environment:
+      PYTHONUNBUFFERED: 1
   db:
     image: postgres
     environment:
@@ -29,5 +31,7 @@ services:
       - 3000:3000
     depends_on:
      - web
+    env_file:
+    - plant_tracker_front/.env.local
 volumes:
   postgres_data:
