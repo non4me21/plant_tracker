@@ -8,8 +8,12 @@ DEBUG = False
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 ALLOWED_HOSTS = [
-  'test'
+  'localhost',
+  '127.0.0.1',
+  'planttracker-production.up.railway.app'
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://planttracker-production.up.railway.app']
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
