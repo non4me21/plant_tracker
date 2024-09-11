@@ -7,9 +7,7 @@ DEBUG = True
 
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 
-ALLOWED_HOSTS = [
-  'planttracker-production.up.railway.app'
-]
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'planttracker-production.up.railway.app').split(',')
 
 CSRF_TRUSTED_ORIGINS = ['*']
 
