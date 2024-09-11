@@ -10,7 +10,10 @@ CORS_ORIGIN_ALLOW_ALL = DEBUG
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'planttracker-production.up.railway.app').split(',')
 
 import os
-print(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
+import logging
+
+logger = logging.getLogger(__name__)
+logger.warning(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}")
 
 CSRF_TRUSTED_ORIGINS = ['https://planttracker-production.up.railway.app', 'http://planttracker-production.up.railway.app']
 
