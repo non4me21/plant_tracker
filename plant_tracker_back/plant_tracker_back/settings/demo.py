@@ -8,7 +8,6 @@ DEBUG = True
 CORS_ORIGIN_ALLOW_ALL = DEBUG
 
 ALLOWED_HOSTS = [
-  '*',
   'planttracker-production.up.railway.app'
 ]
 
